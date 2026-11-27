@@ -1,5 +1,6 @@
 {
   "version": 1,
+  "blank_homepage": true,
   "chapters": [
     {
       "slug": "orientation",

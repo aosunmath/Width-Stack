@@ -26,7 +26,7 @@ from search_index import write_search_index
 import catalogue_properties
 import numerical_references
 import catalogue_history
-from project import TITLE, DESCRIPTION, REPOSITORY, FEATURED_TOPICS
+from project import TITLE, DESCRIPTION, REPOSITORY, PUBLIC_ROOT, FEATURED_TOPICS
 from source_snapshot import revision_id, revision_markup
 from soliton_visualizations import visualization, validate_visualizations
 
@@ -503,25 +503,36 @@ def build_collection(books, destination, configuration):
         page.parent.mkdir(parents=True, exist_ok=True)
         page.write_text(reader.shell(content, route, root, asset_revision()))
 
-    introduction = f'<section class="collection-intro"><div><h1>{TITLE}</h1><p>{DESCRIPTION}</p><p class="collection-count">{len(entries):,} entries · {len(chapters)} chapters · {len(topics)} sections · {len(sources)} manuscript{"s" if len(sources) != 1 else ""} · {len(references)} references</p></div></section>'
-    categories = [key for key in ('shrinkers', 'translators', 'expanders', 'other-special-flows') if key in chapters]
-    if categories:
-        introduction += '<nav class="catalogue-links" aria-label="Special solution categories">' + ''.join(
-            f'<a href="chapters/{key}/">{escape(chapters[key]["title"])}<small>{len(chapters[key]["topics"])} examples and families</small></a>' for key in categories
-        ) + '</nav><p>Each catalogue entry records formulas or construction references, source-supported properties, and a picture. Drawings distinguish exact geometry, numerical ODE approximations, projections, and schematics.</p>'
-    if property_records:
-        introduction += '<a class="browse-callout" href="browse/"><strong>Browse by properties →</strong><span>Ambient space · Topology, genus and ends · Embeddedness · Gaussian area and entropy</span></a>'
-    if sources:
-        introduction += (Path(__file__).resolve().parents[1] / "site" / "home.html").read_text()
-    featured = [(slug, title) for slug, title in FEATURED_TOPICS if slug in topics]
-    if featured:
-        introduction += '<h2>Selected examples</h2><ul>' + ''.join(
-            f'<li><a href="sections/{slug}/">{escape(title)}</a></li>' for slug, title in featured
-        ) + '</ul><p>The reading collection consists of an introduction and four categories: shrinkers, translators, expanders, and other special flows. Each example includes a figure and precise references.</p>'
-    if not entries:
-        introduction += '<p>Special solutions of mean curvature flow will be collected here.</p>'
-    comments_link = '<a href="comments/">Comments</a>' if reader.comments_enabled else ""
-    write("", introduction + f'<nav class="home-links" aria-label="Explore {escape(TITLE)}"><a href="chapters/">Table of contents</a><a href="search/">Search</a><a href="references/">Bibliography</a><a href="numerical-references/">Numerical references</a>{comments_link}<a href="sources/">Sources</a><a href="{REPOSITORY}">GitHub</a></nav><h2>Table of contents</h2>' + reader.contents(""), TITLE, "")
+    if configuration.get("blank_homepage"):
+        (destination / "index.html").write_text(
+            '<!doctype html>\n<html lang="en">\n<head>\n'
+            '<meta charset="utf-8">\n'
+            '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+            f'<title>{escape(TITLE)}</title>\n'
+            f'<link rel="canonical" href="{escape(PUBLIC_ROOT, quote=True)}">\n'
+            '</head>\n<body></body>\n</html>\n',
+            encoding="utf-8",
+        )
+    else:
+        introduction = f'<section class="collection-intro"><div><h1>{TITLE}</h1><p>{DESCRIPTION}</p><p class="collection-count">{len(entries):,} entries · {len(chapters)} chapters · {len(topics)} sections · {len(sources)} manuscript{"s" if len(sources) != 1 else ""} · {len(references)} references</p></div></section>'
+        categories = [key for key in ('shrinkers', 'translators', 'expanders', 'other-special-flows') if key in chapters]
+        if categories:
+            introduction += '<nav class="catalogue-links" aria-label="Special solution categories">' + ''.join(
+                f'<a href="chapters/{key}/">{escape(chapters[key]["title"])}<small>{len(chapters[key]["topics"])} examples and families</small></a>' for key in categories
+            ) + '</nav><p>Each catalogue entry records formulas or construction references, source-supported properties, and a picture. Drawings distinguish exact geometry, numerical ODE approximations, projections, and schematics.</p>'
+        if property_records:
+            introduction += '<a class="browse-callout" href="browse/"><strong>Browse by properties →</strong><span>Ambient space · Topology, genus and ends · Embeddedness · Gaussian area and entropy</span></a>'
+        if sources:
+            introduction += (Path(__file__).resolve().parents[1] / "site" / "home.html").read_text()
+        featured = [(slug, title) for slug, title in FEATURED_TOPICS if slug in topics]
+        if featured:
+            introduction += '<h2>Selected examples</h2><ul>' + ''.join(
+                f'<li><a href="sections/{slug}/">{escape(title)}</a></li>' for slug, title in featured
+            ) + '</ul><p>The reading collection consists of an introduction and four categories: shrinkers, translators, expanders, and other special flows. Each example includes a figure and precise references.</p>'
+        if not entries:
+            introduction += '<p>Special solutions of mean curvature flow will be collected here.</p>'
+        comments_link = '<a href="comments/">Comments</a>' if reader.comments_enabled else ""
+        write("", introduction + f'<nav class="home-links" aria-label="Explore {escape(TITLE)}"><a href="chapters/">Table of contents</a><a href="search/">Search</a><a href="references/">Bibliography</a><a href="numerical-references/">Numerical references</a>{comments_link}<a href="sources/">Sources</a><a href="{REPOSITORY}">GitHub</a></nav><h2>Table of contents</h2>' + reader.contents(""), TITLE, "")
     write("browse", catalogue_properties.page(property_records), "Browse by properties", "../")
     write("chapters", '<h1>Table of contents</h1>' + reader.contents("../"), "Table of contents", "../")
     for key, chapter in chapters.items():
