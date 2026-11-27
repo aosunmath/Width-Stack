@@ -4,8 +4,8 @@
     {
       "slug": "gmt-foundations",
       "title": "Special solutions of mean curvature flow",
-      "author": "MCF-stack contributors",
-      "repository": "https://github.com/aosunmath/MCF-stack",
+      "author": "Width-Stack contributors",
+      "repository": "https://github.com/aosunmath/Width-Stack",
       "status": "published",
       "local_path": "content/gmt-foundations",
       "description": "An illustrated catalogue of self-shrinkers, translators, self-expanders, and other special mean curvature flows, with formulas, geometric properties, precise references, and stated illustration conventions."

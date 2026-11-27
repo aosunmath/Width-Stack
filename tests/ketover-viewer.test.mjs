@@ -5,8 +5,8 @@ import {KETOVER_GENERA,ketoverModelUrl,ketoverRing} from '../site/assets/ketover
 
 test('every selectable Ketover genus resolves to its shipped schematic',()=>{
   for(const g of KETOVER_GENERA){
-    const url=ketoverModelUrl('/MCF-stack/assets/solitons/ketover-shrinkers.json',g);
-    const file=new URL('../site'+url.replace('/MCF-stack',''),import.meta.url);
+    const url=ketoverModelUrl('/Width-Stack/assets/solitons/ketover-shrinkers.json',g);
+    const file=new URL('../site'+url.replace('/Width-Stack',''),import.meta.url);
     assert.ok(existsSync(file));
     const data=JSON.parse(readFileSync(file));
     assert.equal(data.genus,g);assert.equal(data.status,'schematic');

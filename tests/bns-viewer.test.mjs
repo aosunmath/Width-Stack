@@ -5,8 +5,8 @@ import {BNS_GENERA,bnsModelUrl,bnsAxes} from '../site/assets/bns-viewer.mjs';
 
 test('every selectable genus resolves to a labeled, shipped schematic',()=>{
   for(const g of BNS_GENERA){
-    const url=bnsModelUrl('/MCF-stack/assets/solitons/bns-shrinkers.json',g);
-    const file=new URL('../site'+url.replace('/MCF-stack',''),import.meta.url);
+    const url=bnsModelUrl('/Width-Stack/assets/solitons/bns-shrinkers.json',g);
+    const file=new URL('../site'+url.replace('/Width-Stack',''),import.meta.url);
     assert.ok(existsSync(file));
     const data=JSON.parse(readFileSync(file));
     assert.equal(data.genus,g);assert.equal(data.status,'schematic');

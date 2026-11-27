@@ -1,10 +1,10 @@
-# MCF-stack: Special Solutions of Mean Curvature Flow
+# Width-Stack
 
-**[Read the stack → aosunmath.github.io/MCF-stack](https://aosunmath.github.io/MCF-stack/)**
+**[Read the stack → aosunmath.github.io/Width-Stack](https://aosunmath.github.io/Width-Stack/)**
 
-[Contents](https://aosunmath.github.io/MCF-stack/chapters/) · [Browse by properties](https://aosunmath.github.io/MCF-stack/browse/) · [Search](https://aosunmath.github.io/MCF-stack/search/) · [Bibliography](https://aosunmath.github.io/MCF-stack/references/) · [Numerical references](https://aosunmath.github.io/MCF-stack/numerical-references/)
+[Contents](https://aosunmath.github.io/Width-Stack/chapters/) · [Browse by properties](https://aosunmath.github.io/Width-Stack/browse/) · [Search](https://aosunmath.github.io/Width-Stack/search/) · [Bibliography](https://aosunmath.github.io/Width-Stack/references/) · [Numerical references](https://aosunmath.github.io/Width-Stack/numerical-references/)
 
-MCF-stack is a growing mathematical reference collecting **special solutions of mean curvature flow**, including self-shrinkers, translators, self-expanders, ancient solutions, and other geometrically meaningful examples. Following the idea of the [Stacks Project](https://stacks.math.columbia.edu/), it aims to connect definitions, constructions, properties, and classification results through permanent tags, cross-references, and precise source attribution.
+Width-Stack is a growing mathematical reference collecting **special solutions of mean curvature flow**, including self-shrinkers, translators, self-expanders, ancient solutions, and other geometrically meaningful examples. Following the idea of the [Stacks Project](https://stacks.math.columbia.edu/), it aims to connect definitions, constructions, properties, and classification results through permanent tags, cross-references, and precise source attribution.
 
 For each family of solutions, the goal is to record its defining equation, dimensions and topology, geometric properties, construction or existence results, and relevant references. Explicit formulas, rigorous theorems, conjectures, and numerical evidence should be clearly distinguished.
 
@@ -43,10 +43,10 @@ The catalogue contains **159 illustrated example families in four categories**:
 
 | Category | Entries | Examples |
 | --- | ---: | --- |
-| [Shrinkers](https://aosunmath.github.io/MCF-stack/chapters/shrinkers/) | 52 | Spheres and cylinders, Abresch–Langer curves, Angenent torus, Drugan sphere, Clifford torus, higher-genus gluing and min-max constructions, prescribed ends, Platonic symmetries, unbounded entropy, Chopp’s numerical candidates |
-| [Translators](https://aosunmath.github.io/MCF-stack/chapters/translators/) | 36 | Grim reapers, bowl, translating catenoids, delta-wings, Scherk translators, helicoid-like translators, annuloids, Scherkenoids, pitchforks, gluing constructions, prescribed-shrinker-end translators in four-space |
-| [Expanders](https://aosunmath.github.io/MCF-stack/chapters/expanders/) | 19 | Corner smoothings, graphical cones, one- and two-sheeted double-cone smoothings, mean-convex cones, planar networks, mountain-pass, unbounded-genus and knotted expanders |
-| [Other special flows](https://aosunmath.github.io/MCF-stack/chapters/other-special-flows/) | 52 | Stationary minimal surfaces, Whitney sphere evolution, degenerate neckpinches, ancient Angenent oval, torus curves, eternal helices, multiplicity-two infinite-time limits, ancient ovals, reapernoids, stacked pancakes, spiral curves, reaper chains, dense torus curves, rotating curve solitons, and Simons/Lawson-cone singularities and smoothing |
+| [Shrinkers](https://aosunmath.github.io/Width-Stack/chapters/shrinkers/) | 52 | Spheres and cylinders, Abresch–Langer curves, Angenent torus, Drugan sphere, Clifford torus, higher-genus gluing and min-max constructions, prescribed ends, Platonic symmetries, unbounded entropy, Chopp’s numerical candidates |
+| [Translators](https://aosunmath.github.io/Width-Stack/chapters/translators/) | 36 | Grim reapers, bowl, translating catenoids, delta-wings, Scherk translators, helicoid-like translators, annuloids, Scherkenoids, pitchforks, gluing constructions, prescribed-shrinker-end translators in four-space |
+| [Expanders](https://aosunmath.github.io/Width-Stack/chapters/expanders/) | 19 | Corner smoothings, graphical cones, one- and two-sheeted double-cone smoothings, mean-convex cones, planar networks, mountain-pass, unbounded-genus and knotted expanders |
+| [Other special flows](https://aosunmath.github.io/Width-Stack/chapters/other-special-flows/) | 52 | Stationary minimal surfaces, Whitney sphere evolution, degenerate neckpinches, ancient Angenent oval, torus curves, eternal helices, multiplicity-two infinite-time limits, ancient ovals, reapernoids, stacked pancakes, spiral curves, reaper chains, dense torus curves, rotating curve solitons, and Simons/Lawson-cone singularities and smoothing |
 
 The [Chopp source review](documentation/chopp-review.md) records five numerical shrinker candidates, their original topology schematics, the conditional fattening argument, and the scope of related curvature-flow papers.
 
@@ -72,7 +72,7 @@ The [AIV source and numerical review](documentation/aiv-fattening.md) adds stati
 
 ## Browse by geometric properties
 
-The [property browser](https://aosunmath.github.io/MCF-stack/browse/) combines filters for ambient space, intrinsic dimension, compactness, embeddedness, surface genus, topological ends, and Gaussian area or entropy. Group results by ambient space, embeddedness, genus, ends, or the type of entropy information, and share the resulting URL. Embeddedness distinguishes embedded examples, nonembedded examples, families whose status depends on the construction, and cases where no conclusion is recorded.
+The [property browser](https://aosunmath.github.io/Width-Stack/browse/) combines filters for ambient space, intrinsic dimension, compactness, embeddedness, surface genus, topological ends, and Gaussian area or entropy. Group results by ambient space, embeddedness, genus, ends, or the type of entropy information, and share the resulting URL. Embeddedness distinguishes embedded examples, nonembedded examples, families whose status depends on the construction, and cases where no conclusion is recorded.
 
 Exact formulas, proved bounds, numerical estimates, and unrecorded values remain distinct. The entropy bound filter uses only recorded scalar values or proved upper bounds. Surface genus applies only to two-dimensional objects; cross-sectional genus of a translator in four-space is recorded separately. Curved ambient flows are distinguished from Euclidean MCF, and Gaussian area is not identified with entropy for a general flow. See the [metadata guide](documentation/catalogue-properties.md) and [research expansion notes](documentation/research-expansion.md). The [latest shrinker additions](documentation/prescribed-tangent-shrinkers.md) follow the references in Chen–Lee–Sun–Zhao’s paper on prescribed tangent flows.
 
@@ -80,15 +80,15 @@ Exact formulas, proved bounds, numerical estimates, and unrecorded values remain
 
 The website supports keyword and tag search, permanent links, citations, and expandable proofs. The reading collection has five chapters: an introduction followed by shrinkers, translators, expanders, and other special flows. The inherited GMT chapters have been removed. The collection is not exhaustive, and no independent human review or formal verification is claimed.
 
-Corrections and contributions are welcome through [issues](https://github.com/aosunmath/MCF-stack/issues) and pull requests. Include precise references, complete hypotheses, and a clear account of proof status. Preserve existing tags and source labels. See [AGENTS.md](AGENTS.md) and the [integration guide](documentation/integration-layout.md).
+Corrections and contributions are welcome through [issues](https://github.com/aosunmath/Width-Stack/issues) and pull requests. Include precise references, complete hypotheses, and a clear account of proof status. Preserve existing tags and source labels. See [AGENTS.md](AGENTS.md) and the [integration guide](documentation/integration-layout.md).
 
 ## Building the website
 
 Requires Python 3.11+, Node.js/npm, and Git:
 
 ```sh
-git clone https://github.com/aosunmath/MCF-stack.git
-cd MCF-stack
+git clone https://github.com/aosunmath/Width-Stack.git
+cd Width-Stack
 python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements.txt
 npm ci --prefix vendor --ignore-scripts --no-audit --no-fund
@@ -106,10 +106,10 @@ node --test tests/*.test.mjs
 .venv/bin/python scripts/build.py
 ```
 
-GitHub Pages serves the prebuilt `docs/` directory from `main` at **[aosunmath.github.io/MCF-stack/](https://aosunmath.github.io/MCF-stack/)**. See the [deployment guide](documentation/deployment.md) for setup and publication checks.
+GitHub Pages serves the prebuilt `docs/` directory from `main` at **[aosunmath.github.io/Width-Stack/](https://aosunmath.github.io/Width-Stack/)**. See the [deployment guide](documentation/deployment.md) for setup and publication checks.
 
 ## Attribution
 
-The [Numerical references](https://aosunmath.github.io/MCF-stack/numerical-references/) page credits figure methods, software, and documented visual sources, including Mario B. Schulz, Francisco Torralbo, Matthias Weber, David Chopp, Tom Ilmanen, and O. Michael Melko. Figure captions link to these credits. Newly generated meshes retain attribution to the pictures that informed them.
+The [Numerical references](https://aosunmath.github.io/Width-Stack/numerical-references/) page credits figure methods, software, and documented visual sources, including Mario B. Schulz, Francisco Torralbo, Matthias Weber, David Chopp, Tom Ilmanen, and O. Michael Melko. Figure captions link to these credits. Newly generated meshes retain attribution to the pictures that informed them.
 
-MCF-stack is derived from [GMT-stack](https://github.com/aosunmath/GMT-stack), using [Mingchen Xia’s Pome framework](https://github.com/MingchenXia/Pome) and the Gerby renderer. The original infrastructure copyright and [MIT license](LICENSE) are preserved. Mathematical contributions must retain their source attribution and applicable licenses. MCF-stack is inspired by the Stacks Project and is an independent project.
+Width-Stack is derived from [MCF-stack](https://github.com/aosunmath/MCF-stack), which was adapted from [GMT-stack](https://github.com/aosunmath/GMT-stack) using [Mingchen Xia’s Pome framework](https://github.com/MingchenXia/Pome) and the Gerby renderer. The original infrastructure copyright and [MIT license](LICENSE) are preserved. Mathematical contributions must retain their source attribution and applicable licenses. Width-Stack is inspired by the Stacks Project and is an independent project.

@@ -287,7 +287,7 @@ class ReaderTests(unittest.TestCase):
                 self.assertFalse(soup.select('#comments, [data-comment-term], [data-load-comments]'))
                 self.assertFalse(soup.select('a[href="#comments"], a[href$="comments/"]'))
                 self.assertFalse(soup.select('script[src*="comments.mjs"]'))
-                self.assertTrue(soup.select_one('link[rel="canonical"]')['href'].startswith('https://aosunmath.github.io/MCF-stack/'))
+                self.assertTrue(soup.select_one('link[rel="canonical"]')['href'].startswith('https://aosunmath.github.io/Width-Stack/'))
                 self.assertEqual(soup.select_one('.brand').get_text(strip=True), TITLE)
                 self.assertIn(CONTRIBUTORS, soup.select_one('#citation-text').get_text())
                 self.assertIn(TITLE, soup.title.get_text())
@@ -296,7 +296,7 @@ class ReaderTests(unittest.TestCase):
 
     def test_configured_comments_keep_stable_routes_and_github_fallback(self):
         reader = Reader({}, {}, {}, {}, {
-            'enabled': True, 'repo': 'aosunmath/MCF-stack', 'repo_id': 'TEST_REPO',
+            'enabled': True, 'repo': 'aosunmath/Width-Stack', 'repo_id': 'TEST_REPO',
             'category': 'General', 'category_id': 'TEST_CATEGORY',
             'category_slug': 'general', 'term_prefix': 'GMT Stack',
         })
@@ -308,9 +308,9 @@ class ReaderTests(unittest.TestCase):
         for route in reader.order:
             panel = BeautifulSoup(reader.comment_panel(route), 'html.parser').section
             terms.append(panel['data-comment-term'])
-            self.assertEqual(panel['data-repo'], 'aosunmath/MCF-stack')
+            self.assertEqual(panel['data-repo'], 'aosunmath/Width-Stack')
             self.assertTrue(panel['data-comment-term'].startswith('GMT Stack /'))
-            self.assertIn('aosunmath/MCF-stack/discussions/new?', panel.select_one('.comment-actions a:last-child')['href'])
+            self.assertIn('aosunmath/Width-Stack/discussions/new?', panel.select_one('.comment-actions a:last-child')['href'])
         self.assertEqual(len(terms), len(set(terms)))
 
 

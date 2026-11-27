@@ -1,10 +1,10 @@
-"""Identity of MCF-stack, shared by the reader and publisher."""
+"""Identity of Width-Stack, shared by the reader and publisher."""
 
-TITLE = "MCF-stack: Special Solutions of Mean Curvature Flow"
+TITLE = "Width-Stack"
 DESCRIPTION = "A growing Stacks-style reference collecting self-shrinkers, translators, self-expanders, ancient solutions, and other special solutions of mean curvature flow."
-REPOSITORY_SLUG = "aosunmath/MCF-stack"
+REPOSITORY_SLUG = "aosunmath/Width-Stack"
 REPOSITORY = "https://github.com/" + REPOSITORY_SLUG
-PUBLIC_ROOT = "https://aosunmath.github.io/MCF-stack/"
+PUBLIC_ROOT = "https://aosunmath.github.io/Width-Stack/"
 
 CONTRIBUTORS = TITLE + " contributors"
 

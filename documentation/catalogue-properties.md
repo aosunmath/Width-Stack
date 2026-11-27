@@ -1,6 +1,6 @@
 # Catalogue property records
 
-`catalogue-properties.json` contains one record per permanent example label. The build requires its labels to agree exactly with the active examples and illustration registry. The [public browser](https://aosunmath.github.io/MCF-stack/browse/) also exports the resolved metadata as `catalogue-properties.json`, including the corresponding section routes and tags.
+`catalogue-properties.json` contains one record per permanent example label. The build requires its labels to agree exactly with the active examples and illustration registry. The [public browser](https://aosunmath.github.io/Width-Stack/browse/) also exports the resolved metadata as `catalogue-properties.json`, including the corresponding section routes and tags.
 
 Each record has one or more **geometric cases**. Ambient space, intrinsic dimension, compactness, embeddedness, genus, ends, and quantitative information must describe the same case. For instance, a grim-reaper curve has two ends; its product surface is a plane topologically and has one end. The two cases cannot be combined to invent a genus-zero surface with two ends. Higher-dimensional cylinders split according to the dimension of their Euclidean factor. Ambient tags record the construction's stated ambient space, not every trivial Euclidean inclusion.
 
